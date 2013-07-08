@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title><?php echo $_SERVER['HTTP_HOST']; ?></title>
+	<title><?= $host ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width">
 	<style type="text/css">
@@ -19,42 +19,19 @@
 
 <body>
 
-<?php
+<?php if($host == 'ip.bwerp.net'): ?>
 
-if($_SERVER['HTTP_HOST'] == 'ip.bwerp.net')
-{
-	$ip = $_SERVER["REMOTE_ADDR"];
-	$host = gethostbyaddr($ip);
+	<p id="ip"><?= $remote_ip; ?></p>
 
-	if($host == $ip)
-	{
-		$host = '';
-	}
-
-	$customs = array(
-		'sixohthree.com' => 'server5.bwerp.net',
-		'cpe-76-178-194-111.maine.res.rr.com' => 'server4.bwerp.net'
-	);
-
-	?>
-
-	<p id="ip"><?php echo $ip; ?></p>
-
-	<?php if($host != ''): ?>
-		<p id="host"><?php echo $host; ?></p>
+	<?php if($remote_host != $remote_ip): ?>
+		<p id="host"><?php echo $remote_host; ?></p>
 	<?php endif; ?>
 
-	<?php if(array_key_exists($host, $customs)): ?>
-		<p id="custom"><?php echo $customs[$host]; ?></p>
-	<?php endif;
-}
-elseif($_SERVER['HTTP_HOST'] == 'ua.bwerp.net')
-{
-	?>
-	<p id="ua"><?php echo $_SERVER['HTTP_USER_AGENT']; ?></p>
-	<?php
-}
-?>
+<?php elseif($host == 'ua.bwerp.net'): ?>
+
+	<p id="ua"><?= $user_agent ?></p>
+
+<?php endif; ?>
 
 </body>
 
