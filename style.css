@@ -1,0 +1,7 @@
+* { margin: 0; padding: 0; }
+body { background-color: black; font-family: Trebuchet MS, Arial, sans-serif; }
+p { color: white; text-align: center; margin-top: 2em; }
+p#ip { font-size: 300%; }
+p#host { margin-bottom: 0; }
+p#custom { margin-top: 1ex; }
+p#ua { margin-top: 5em; }

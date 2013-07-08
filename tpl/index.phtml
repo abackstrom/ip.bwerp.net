@@ -3,33 +3,27 @@
 <html>
 
 <head>
-	<title><?= $host ?></title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width=device-width">
-	<style type="text/css">
-	* { margin: 0; padding: 0; }
-	body { background-color: black; font-family: Trebuchet MS, Arial, sans-serif; }
-	p { color: white; text-align: center; margin-top: 2em; }
-	p#ip { font-size: 300%; }
-	p#host { margin-bottom: 0; }
-	p#custom { margin-top: 1ex; }
-	p#ua { margin-top: 5em; }
-	</style>
+    <title><?= $host ?></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css">
+    <?php include 'style.css'; ?>
+    </style>
 </head>
 
 <body>
 
 <?php if($host == 'ip.bwerp.net'): ?>
 
-	<p id="ip"><?= $remote_ip; ?></p>
+    <p id="ip"><?= $remote_ip; ?></p>
 
-	<?php if($remote_host != $remote_ip): ?>
-		<p id="host"><?php echo $remote_host; ?></p>
-	<?php endif; ?>
+    <?php if($remote_host != $remote_ip): ?>
+        <p id="host"><?php echo $remote_host; ?></p>
+    <?php endif; ?>
 
 <?php elseif($host == 'ua.bwerp.net'): ?>
 
-	<p id="ua"><?= $user_agent ?></p>
+    <p id="ua"><?= $user_agent ?></p>
 
 <?php endif; ?>
 
