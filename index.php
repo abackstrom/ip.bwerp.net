@@ -1,5 +1,8 @@
 <?php
 
+define('HOST_IP', 'ip.bwerp.net');
+define('HOST_UA', 'ua.bwerp.net');
+
 $method = $_SERVER['QUERY_STRING'];
 
 $params = array(
@@ -10,7 +13,11 @@ $params = array(
 );
 
 if ($method == null && strpos($params['user_agent'], 'curl/') === 0) {
-    die($params['remote_ip'] . "\n");
+    if ($params['host'] === HOST_IP) {
+        die($params['remote_ip'] . "\n");
+    } else {
+        die($params['user_agent'] . "\n");
+    }
 }
 
 switch($method) {

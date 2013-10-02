@@ -13,7 +13,7 @@
 
 <body>
 
-<?php if($host == 'ip.bwerp.net'): ?>
+<?php if($host == HOST_IP): ?>
 
     <p id="ip"><?= $remote_ip; ?></p>
 
@@ -21,7 +21,7 @@
         <p id="host"><?php echo $remote_host; ?></p>
     <?php endif; ?>
 
-<?php elseif($host == 'ua.bwerp.net'): ?>
+<?php elseif($host == HOST_UA): ?>
 
     <p id="ua"><?= $user_agent ?></p>
 
