@@ -13,7 +13,16 @@
 
 <body>
 
-<?php if($host == HOST_IP): ?>
+<?php if ($headers_only): ?>
+
+    <p id="headers">
+        <?php foreach($headers as $key => $value): ?>
+            <span class="header-key"><?= $key ?></span>:
+            <span class="header-value"><?= $value ?></span><br>
+        <?php endforeach; ?>
+    </p>
+
+<?php elseif($host == HOST_IP): ?>
 
     <p id="ip"><?= $remote_ip; ?></p>
 

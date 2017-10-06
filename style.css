@@ -1,7 +1,18 @@
 * { margin: 0; padding: 0; }
-body { background-color: black; font-family: Trebuchet MS, Arial, sans-serif; }
-p { color: white; text-align: center; margin-top: 2em; }
+body { background-color: #000; font-family: Trebuchet MS, Arial, sans-serif; color: #fff; }
+p {
+    color: white; text-align: center; margin-top: 2em; max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
 p#ip { font-size: 300%; }
 p#host { margin-bottom: 0; }
 p#custom { margin-top: 1ex; }
 p#ua { margin-top: 5em; }
+p#headers { text-align: left; }
+.header-key {
+    color: #fff;
+}
+.header-value {
+    color: #ffc1fe;
+}
