@@ -22,7 +22,7 @@
         <?php endforeach; ?>
     </p>
 
-<?php elseif($host == HOST_IP): ?>
+<?php elseif(IS_IP_REQUEST): ?>
 
     <p id="ip"><?= $remote_ip; ?></p>
 
