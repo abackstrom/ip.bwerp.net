@@ -3,6 +3,8 @@
 define('HOST_IP', 'ip.bwerp.net');
 define('HOST_UA', 'ua.bwerp.net');
 
+define('IS_IP_REQUEST', in_array($_SERVER['HTTP_HOST'], ['ip.bwerp.net', 'ip4.bwerp.net', 'ip6.bwerp.net']));
+
 $method = $_SERVER['QUERY_STRING'];
 
 $params = array(
@@ -15,7 +17,7 @@ $params = array(
 );
 
 if ($method == null && strpos($params['user_agent'], 'curl/') === 0) {
-    if ($params['host'] === HOST_IP) {
+    if (IS_IP_REQUEST) {
         die($params['remote_ip'] . "\n");
     } else {
         die($params['user_agent'] . "\n");
