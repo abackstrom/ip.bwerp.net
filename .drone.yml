@@ -1,0 +1,7 @@
+pipeline:
+  deploy:
+    image: images.abackstrom.com/rsync-ssh
+    commands:
+      - rsync -hrz --delete -C --exclude=".*" -e ssh ./ web04:/var/sixohthree/ip.bwerp.net/
+
+branches: master
